@@ -23,7 +23,6 @@ public class ChooseBar extends FrameLayout implements OnClickListener{
 	private ArrayList<TextView> mTabs;
 	private OnChooseListener mOnChooseListener;
 	private View mSlideBlock;
-	private CustomLinearLayout mCustomLinearLayout;
 	private int mCurrentPosition;
 	private int mWidthOfSlideBlock;
 	
@@ -34,7 +33,6 @@ public class ChooseBar extends FrameLayout implements OnClickListener{
 		inflater.inflate(R.layout.choose_bar, this, true);
 		
 	    mSlideBlock = (View) findViewById(R.id.slide_block);
-		mCustomLinearLayout = (CustomLinearLayout) findViewById(R.id.customLayout);
 		mChooseHome = (TextView) findViewById(R.id.choose_home);
 		mChooseHome.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
 		mCurrentPosition = 0;
@@ -56,35 +54,30 @@ public class ChooseBar extends FrameLayout implements OnClickListener{
 		case R.id.choose_home:
 			clearTextTypeface();
 			mChooseHome.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-			mCustomLinearLayout.startScroll((mCurrentPosition-CHOOSEHOME)*mWidthOfSlideBlock);
 			mCurrentPosition = CHOOSEHOME;
 			mOnChooseListener.beChoose(CHOOSEHOME);
 			break;
 		case R.id.choose_hot:
 			clearTextTypeface();
 			mChooseHot.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-			mCustomLinearLayout.startScroll((mCurrentPosition-CHOOSEHOT)*mWidthOfSlideBlock);
 			mCurrentPosition = CHOOSEHOT;
 			mOnChooseListener.beChoose(CHOOSEHOT);
 			break;
 		case R.id.choose_advise:
 			clearTextTypeface();
 			mChooseAdvise.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-			mCustomLinearLayout.startScroll((mCurrentPosition-CHOOSEADVISE)*mWidthOfSlideBlock);
 			mCurrentPosition = CHOOSEADVISE;
 			mOnChooseListener.beChoose(CHOOSEADVISE);
 			break;
 		case R.id.choose_partition:
 			clearTextTypeface();
 			mChoosePartition.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-			mCustomLinearLayout.startScroll((mCurrentPosition-CHOOSEPARTITION)*mWidthOfSlideBlock);
 			mCurrentPosition = CHOOSEPARTITION;
 			mOnChooseListener.beChoose(CHOOSEPARTITION);
 			break;
 		case R.id.choose_comic:
 			clearTextTypeface();
 			mChooseComic.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-			mCustomLinearLayout.startScroll((mCurrentPosition-CHOOSECOMIC)*mWidthOfSlideBlock);
 			mCurrentPosition = CHOOSECOMIC;
 			mOnChooseListener.beChoose(CHOOSECOMIC);
 			default:
